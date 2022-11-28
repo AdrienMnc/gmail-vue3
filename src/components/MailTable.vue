@@ -25,9 +25,7 @@
     </tbody>
   </table>
 
-  <div v-if="openedEmail">
-    {{ openedEmail.subject }}
-  </div>
+  <MailView v-if="openedEmail" :email="openedEmail" />
 </template>
 
 <script>
