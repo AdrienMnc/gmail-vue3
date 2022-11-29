@@ -1,5 +1,6 @@
 <template>
   <div class="email-display">
+    <div class="close-modal" @click="emit('closeModal')">X</div>
     <h2 class="mb-0">
       Subject: <strong>{{ email.subject }}</strong>
     </h2>
@@ -15,10 +16,11 @@ import { format } from "date-fns";
 import marked from "marked";
 
 export default {
-  setup() {
+  setup(props, { emit }) {
     return {
       format,
-      marked
+      marked,
+      emit
     };
   },
   props: {
@@ -30,4 +32,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.close-modal {
+  cursor: pointer;
+}
+</style>
