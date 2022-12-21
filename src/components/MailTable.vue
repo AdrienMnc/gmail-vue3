@@ -37,7 +37,7 @@ import ModalView from "./ModalView.vue";
 
 export default {
   async setup() {
-    // await new Promise(resolve => setTimeout(resolve, 1000)); No need anymore but still want it here
+    // await new Promise(resolve => setTimeout(resolve, 1000)); leaving it here in case of need
     let response = await axios.get("http://localhost:3000/emails");
     let emails = response.data;
     return {
